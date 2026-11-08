@@ -1,0 +1,10 @@
+{
+ "H1": "REFUTED",
+ "H2": "CONFIRMED",
+ "H3": "REFUTED",
+ "detail": {
+  "top5_diff": 0.0357142857142857,
+  "spurious_diff": 0.3333333333333333,
+  "build_ratio_li_over_prod": 537.8199279148783
+ }
+}

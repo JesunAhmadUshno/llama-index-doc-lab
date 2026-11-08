@@ -25,3 +25,22 @@ chunk, because coverage is the pipeline's own rerank currency (its
 first sort key). The alternative, the RRF hybrid score, is a rank
 artifact with no per-question meaning. Recorded here because the
 pre-registration states the choice and this file states the reason.
+
+D4, first run attempt failed at embedding load, before any scored
+record existed. The initial snapshot_download of the embedding
+model had been interrupted (a stalled transfer, killed), leaving
+an incomplete snapshot; the offline load in run_study.py therefore
+raised before any arm was built. The model load was completed
+during harness debugging (one online load), offline loading was
+then verified, and the study proceeded. No raw records were
+written by the failed attempt.
+
+D5, second run attempt executed the full protocol but failed at
+the final write: the results/ directory did not exist in the fresh
+clone layout, so raw_runs.json was never persisted and every
+measurement from that pass was lost. Harness bug, ours. The fix
+(run_study.py creates the directory) is in the harness commit
+history, and the study was rerun from scratch, both arms, exactly
+as the stop rule in PREREGISTRATION.md requires. The pass reported
+in RESULTS.md is that rerun, and it is the only pass whose records
+exist.

@@ -1,0 +1,2225 @@
+{
+ "env": {
+  "timestamp_utc": "2026-11-08T20:52:04.900062+00:00",
+  "machine": "htch-runtime",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "packages": {
+   "llama-index": "0.14.25",
+   "llama-index-core": "0.14.25",
+   "llama-index-embeddings-huggingface": "0.8.0",
+   "sentence-transformers": "6.2.0",
+   "torch": "2.15.0+cpu",
+   "numpy": "2.5.4"
+  },
+  "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embed_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "questions_sha256": "f1b52a8d79ca1315f7a632cc659118101fab11821fe97d6b20d2d39a9ae0079b",
+  "corpus_py_sha256": "509021670026878115987d61f0efd9e615f24660a895c03b407ad6ab38458521",
+  "pipeline_py_sha256": "3776947f1b0dacf7da55861dec3c94b07b849e6e6ddb3d3da693f1e731a00f62"
+ },
+ "builds": {
+  "prod": {
+   "build_times_s": [
+    0.003054856999369804,
+    0.0028025379997416167,
+    0.0025664830000096117
+   ],
+   "build_median_s": 0.0028025379997416167,
+   "build_per_doc_s": 0.00014012689998708084,
+   "chunk_count": 41,
+   "index_bytes": 51463
+  },
+  "li": {
+   "build_times_s": [
+    2.2071812159992987,
+    1.3096224840001014,
+    1.507260784999744
+   ],
+   "build_median_s": 1.507260784999744,
+   "build_per_doc_s": 0.07536303924998719,
+   "node_count": 20,
+   "index_bytes": 207734
+  }
+ },
+ "questions": [
+  {
+   "id": "b01-absorb",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What gas do plants absorb from the air for photosynthesis?",
+   "expected_doc": "photosynthesis",
+   "prod": {
+    "ranked_docs": [
+     "photosynthesis",
+     "seasons",
+     "storms",
+     "pollination",
+     "wind-power",
+     "seed-dispersal"
+    ],
+    "top1_score": 0.8,
+    "latencies_s": [
+     0.0007983780005815788,
+     0.0004600199999913457,
+     0.000427141999352898
+    ],
+    "latency_median_s": 0.0004600199999913457
+   },
+   "li": {
+    "ranked_docs": [
+     "photosynthesis",
+     "pollination",
+     "water-cycle",
+     "seed-dispersal",
+     "solar-power",
+     "wind-power",
+     "bees",
+     "seasons",
+     "bird-migration",
+     "gravity",
+     "rivers-and-lakes",
+     "northlight-hours",
+     "northlight-loans",
+     "hydro-power",
+     "northlight-events",
+     "storms",
+     "volcanoes",
+     "ocean-tides",
+     "salmon-run",
+     "earthquakes"
+    ],
+    "top1_score": 0.6567942342067884,
+    "latencies_s": [
+     0.013149190999683924,
+     0.07611987099971884,
+     0.012313596999774745
+    ],
+    "latency_median_s": 0.013149190999683924
+   }
+  },
+  {
+   "id": "b02-clouds",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What process forms clouds in the water cycle?",
+   "expected_doc": "water-cycle",
+   "prod": {
+    "ranked_docs": [
+     "water-cycle",
+     "storms",
+     "ocean-tides",
+     "gravity",
+     "seasons",
+     "hydro-power",
+     "rivers-and-lakes",
+     "pollination",
+     "seed-dispersal",
+     "photosynthesis"
+    ],
+    "top1_score": 0.8,
+    "latencies_s": [
+     0.0009157340000456315,
+     0.0005851489995620796,
+     0.0005861199997525546
+    ],
+    "latency_median_s": 0.0005861199997525546
+   },
+   "li": {
+    "ranked_docs": [
+     "water-cycle",
+     "storms",
+     "photosynthesis",
+     "rivers-and-lakes",
+     "ocean-tides",
+     "bird-migration",
+     "seed-dispersal",
+     "pollination",
+     "seasons",
+     "hydro-power",
+     "wind-power",
+     "volcanoes",
+     "solar-power",
+     "gravity",
+     "salmon-run",
+     "earthquakes",
+     "northlight-events",
+     "bees",
+     "northlight-hours",
+     "northlight-loans"
+    ],
+    "top1_score": 0.7168131867237404,
+    "latencies_s": [
+     0.05205555199972878,
+     0.09366478100037057,
+     0.08021305600050255
+    ],
+    "latency_median_s": 0.08021305600050255
+   }
+  },
+  {
+   "id": "b03-newton",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "Who described gravity as a universal attraction between masses?",
+   "expected_doc": "gravity",
+   "prod": {
+    "ranked_docs": [
+     "gravity",
+     "ocean-tides",
+     "bees",
+     "storms",
+     "volcanoes",
+     "water-cycle",
+     "bird-migration"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0007037469995339052,
+     0.000523454999893147,
+     0.0004624440007319208
+    ],
+    "latency_median_s": 0.000523454999893147
+   },
+   "li": {
+    "ranked_docs": [
+     "gravity",
+     "pollination",
+     "seed-dispersal",
+     "ocean-tides",
+     "earthquakes",
+     "bees",
+     "bird-migration",
+     "hydro-power",
+     "water-cycle",
+     "photosynthesis",
+     "storms",
+     "volcanoes",
+     "northlight-events",
+     "rivers-and-lakes",
+     "northlight-loans",
+     "solar-power",
+     "wind-power",
+     "salmon-run",
+     "seasons",
+     "northlight-hours"
+    ],
+    "top1_score": 0.622751786205686,
+    "latencies_s": [
+     0.10276793899993208,
+     0.19436524599950644,
+     0.010706072999710159
+    ],
+    "latency_median_s": 0.10276793899993208
+   }
+  },
+  {
+   "id": "b04-bees-dance",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "How do bees communicate the location of flowers?",
+   "expected_doc": "bees",
+   "prod": {
+    "ranked_docs": [
+     "bees",
+     "pollination"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0004172870003458229,
+     0.00038309499996103114,
+     0.0003083930005232105
+    ],
+    "latency_median_s": 0.00038309499996103114
+   },
+   "li": {
+    "ranked_docs": [
+     "bees",
+     "pollination",
+     "seed-dispersal",
+     "bird-migration",
+     "photosynthesis",
+     "seasons",
+     "gravity",
+     "ocean-tides",
+     "solar-power",
+     "water-cycle",
+     "wind-power",
+     "rivers-and-lakes",
+     "hydro-power",
+     "northlight-events",
+     "earthquakes",
+     "storms",
+     "salmon-run",
+     "northlight-hours",
+     "volcanoes",
+     "northlight-loans"
+    ],
+    "top1_score": 0.6951977012610071,
+    "latencies_s": [
+     0.021437944999888714,
+     0.10777888100074051,
+     0.20551183099996706
+    ],
+    "latency_median_s": 0.10777888100074051
+   }
+  },
+  {
+   "id": "b05-magma",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What does magma become when it reaches the surface?",
+   "expected_doc": "volcanoes",
+   "prod": {
+    "ranked_docs": [
+     "volcanoes",
+     "earthquakes"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0004241370006639045,
+     0.0003202210000381456,
+     0.0003019539999513654
+    ],
+    "latency_median_s": 0.0003202210000381456
+   },
+   "li": {
+    "ranked_docs": [
+     "volcanoes",
+     "earthquakes",
+     "water-cycle",
+     "ocean-tides",
+     "gravity",
+     "pollination",
+     "hydro-power",
+     "rivers-and-lakes",
+     "seed-dispersal",
+     "storms",
+     "solar-power",
+     "wind-power",
+     "photosynthesis",
+     "bird-migration",
+     "bees",
+     "seasons",
+     "salmon-run",
+     "northlight-events",
+     "northlight-loans",
+     "northlight-hours"
+    ],
+    "top1_score": 0.5657631444971003,
+    "latencies_s": [
+     0.0888823510003931,
+     0.1091243309992933,
+     0.07741579699995782
+    ],
+    "latency_median_s": 0.0888823510003931
+   }
+  },
+  {
+   "id": "b06-books-count",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "How many books can members borrow from the Northlight library?",
+   "expected_doc": "northlight-loans",
+   "prod": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-events",
+     "northlight-hours",
+     "pollination",
+     "rivers-and-lakes",
+     "volcanoes",
+     "bees",
+     "solar-power",
+     "bird-migration"
+    ],
+    "top1_score": 0.6666666666666666,
+    "latencies_s": [
+     0.0008618940000815201,
+     0.000627921999694081,
+     0.000628884000434482
+    ],
+    "latency_median_s": 0.000628884000434482
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-events",
+     "northlight-hours",
+     "photosynthesis",
+     "bird-migration",
+     "water-cycle",
+     "seed-dispersal",
+     "rivers-and-lakes",
+     "salmon-run",
+     "bees",
+     "ocean-tides",
+     "gravity",
+     "seasons",
+     "storms",
+     "hydro-power",
+     "pollination",
+     "solar-power",
+     "wind-power",
+     "volcanoes",
+     "earthquakes"
+    ],
+    "top1_score": 0.6367357481910582,
+    "latencies_s": [
+     0.1130086939992907,
+     0.0827135100007581,
+     0.01312070899984974
+    ],
+    "latency_median_s": 0.0827135100007581
+   }
+  },
+  {
+   "id": "b07-oxygen",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What do plants release into the air during photosynthesis?",
+   "expected_doc": "photosynthesis",
+   "prod": {
+    "ranked_docs": [
+     "photosynthesis",
+     "seasons",
+     "storms",
+     "earthquakes",
+     "seed-dispersal",
+     "pollination",
+     "wind-power",
+     "solar-power"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.000735904999601189,
+     0.0004997899995942134,
+     0.000523476000125811
+    ],
+    "latency_median_s": 0.000523476000125811
+   },
+   "li": {
+    "ranked_docs": [
+     "photosynthesis",
+     "pollination",
+     "seed-dispersal",
+     "water-cycle",
+     "solar-power",
+     "wind-power",
+     "seasons",
+     "bird-migration",
+     "bees",
+     "gravity",
+     "rivers-and-lakes",
+     "volcanoes",
+     "ocean-tides",
+     "storms",
+     "hydro-power",
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans",
+     "salmon-run",
+     "earthquakes"
+    ],
+    "top1_score": 0.6718547840539238,
+    "latencies_s": [
+     0.19385419900027046,
+     0.029786589000650565,
+     0.012222719999954279
+    ],
+    "latency_median_s": 0.029786589000650565
+   }
+  },
+  {
+   "id": "b08-evaporation",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What causes evaporation in the water cycle?",
+   "expected_doc": "water-cycle",
+   "prod": {
+    "ranked_docs": [
+     "water-cycle",
+     "ocean-tides",
+     "seasons",
+     "hydro-power",
+     "rivers-and-lakes",
+     "seed-dispersal",
+     "photosynthesis"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0006627050006500212,
+     0.0004925499997625593,
+     0.0005006710007364745
+    ],
+    "latency_median_s": 0.0005006710007364745
+   },
+   "li": {
+    "ranked_docs": [
+     "water-cycle",
+     "seasons",
+     "rivers-and-lakes",
+     "hydro-power",
+     "photosynthesis",
+     "ocean-tides",
+     "volcanoes",
+     "seed-dispersal",
+     "bird-migration",
+     "gravity",
+     "solar-power",
+     "storms",
+     "wind-power",
+     "pollination",
+     "salmon-run",
+     "northlight-events",
+     "earthquakes",
+     "northlight-loans",
+     "bees",
+     "northlight-hours"
+    ],
+    "top1_score": 0.7695077064603281,
+    "latencies_s": [
+     0.09112131300025794,
+     0.08726655600003141,
+     0.08033439900009398
+    ],
+    "latency_median_s": 0.08726655600003141
+   }
+  },
+  {
+   "id": "b09-tide",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What pulls on ocean water to cause a high tide?",
+   "expected_doc": "ocean-tides",
+   "prod": {
+    "ranked_docs": [
+     "ocean-tides",
+     "water-cycle",
+     "gravity",
+     "hydro-power",
+     "rivers-and-lakes",
+     "salmon-run",
+     "seed-dispersal",
+     "photosynthesis"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0008250979999502306,
+     0.0005684140005541849,
+     0.0005557439999392955
+    ],
+    "latency_median_s": 0.0005684140005541849
+   },
+   "li": {
+    "ranked_docs": [
+     "ocean-tides",
+     "water-cycle",
+     "gravity",
+     "hydro-power",
+     "rivers-and-lakes",
+     "earthquakes",
+     "pollination",
+     "storms",
+     "photosynthesis",
+     "seed-dispersal",
+     "salmon-run",
+     "wind-power",
+     "bees",
+     "volcanoes",
+     "bird-migration",
+     "seasons",
+     "solar-power",
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans"
+    ],
+    "top1_score": 0.7117986345312379,
+    "latencies_s": [
+     0.08385564499985776,
+     0.21239238100042712,
+     0.021168780999687442
+    ],
+    "latency_median_s": 0.08385564499985776
+   }
+  },
+  {
+   "id": "b10-pollen",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What carries pollen from flower to flower so pollination can happen?",
+   "expected_doc": "pollination",
+   "prod": {
+    "ranked_docs": [
+     "bees",
+     "pollination",
+     "seed-dispersal",
+     "photosynthesis",
+     "seasons",
+     "northlight-events",
+     "wind-power",
+     "solar-power"
+    ],
+    "top1_score": 0.6666666666666666,
+    "latencies_s": [
+     0.0006939219993000734,
+     0.0004977669996151235,
+     0.0005239060001258622
+    ],
+    "latency_median_s": 0.0005239060001258622
+   },
+   "li": {
+    "ranked_docs": [
+     "pollination",
+     "bees",
+     "seed-dispersal",
+     "photosynthesis",
+     "bird-migration",
+     "wind-power",
+     "gravity",
+     "solar-power",
+     "water-cycle",
+     "ocean-tides",
+     "seasons",
+     "storms",
+     "volcanoes",
+     "hydro-power",
+     "rivers-and-lakes",
+     "salmon-run",
+     "earthquakes",
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans"
+    ],
+    "top1_score": 0.7575665014534841,
+    "latencies_s": [
+     0.01207890400019096,
+     0.07428249300028256,
+     0.07257616000060807
+    ],
+    "latency_median_s": 0.07257616000060807
+   }
+  },
+  {
+   "id": "b11-light-seeds",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "How do light seeds with wings travel away from the parent plant?",
+   "expected_doc": "seed-dispersal",
+   "prod": {
+    "ranked_docs": [
+     "seed-dispersal",
+     "bird-migration",
+     "pollination",
+     "photosynthesis",
+     "seasons"
+    ],
+    "top1_score": 0.8571428571428571,
+    "latencies_s": [
+     0.0007007119993431843,
+     0.0005213730000832584,
+     0.0004924190006931894
+    ],
+    "latency_median_s": 0.0005213730000832584
+   },
+   "li": {
+    "ranked_docs": [
+     "seed-dispersal",
+     "pollination",
+     "bird-migration",
+     "photosynthesis",
+     "bees",
+     "salmon-run",
+     "water-cycle",
+     "gravity",
+     "wind-power",
+     "seasons",
+     "solar-power",
+     "storms",
+     "northlight-hours",
+     "rivers-and-lakes",
+     "northlight-loans",
+     "northlight-events",
+     "hydro-power",
+     "ocean-tides",
+     "earthquakes",
+     "volcanoes"
+    ],
+    "top1_score": 0.6623569562060274,
+    "latencies_s": [
+     0.012877993999609316,
+     0.09846234399992682,
+     0.01993699199920229
+    ],
+    "latency_median_s": 0.01993699199920229
+   }
+  },
+  {
+   "id": "b12-epicentre",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What is the place on the surface above where an earthquake slip starts called?",
+   "expected_doc": "earthquakes",
+   "prod": {
+    "ranked_docs": [
+     "earthquakes",
+     "pollination",
+     "volcanoes",
+     "bird-migration",
+     "solar-power"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0617799819992797,
+     0.0004922289999740315,
+     0.000479540000014822
+    ],
+    "latency_median_s": 0.0004922289999740315
+   },
+   "li": {
+    "ranked_docs": [
+     "earthquakes",
+     "volcanoes",
+     "ocean-tides",
+     "storms",
+     "gravity",
+     "water-cycle",
+     "wind-power",
+     "hydro-power",
+     "rivers-and-lakes",
+     "seasons",
+     "bird-migration",
+     "salmon-run",
+     "seed-dispersal",
+     "pollination",
+     "northlight-events",
+     "northlight-loans",
+     "solar-power",
+     "northlight-hours",
+     "bees",
+     "photosynthesis"
+    ],
+    "top1_score": 0.7008471201660362,
+    "latencies_s": [
+     0.10923626000021613,
+     0.020291804000407865,
+     0.08472791399981361
+    ],
+    "latency_median_s": 0.08472791399981361
+   }
+  },
+  {
+   "id": "b13-photovoltaic",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What do photovoltaic cells release when sunlight strikes them in a solar panel?",
+   "expected_doc": "solar-power",
+   "prod": {
+    "ranked_docs": [
+     "solar-power",
+     "photosynthesis",
+     "earthquakes"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0006442879994210671,
+     0.0004174759997113142,
+     0.00041638499988039257
+    ],
+    "latency_median_s": 0.0004174759997113142
+   },
+   "li": {
+    "ranked_docs": [
+     "solar-power",
+     "photosynthesis",
+     "wind-power",
+     "water-cycle",
+     "hydro-power",
+     "seasons",
+     "pollination",
+     "bees",
+     "seed-dispersal",
+     "gravity",
+     "northlight-hours",
+     "storms",
+     "bird-migration",
+     "volcanoes",
+     "ocean-tides",
+     "earthquakes",
+     "northlight-loans",
+     "northlight-events",
+     "rivers-and-lakes",
+     "salmon-run"
+    ],
+    "top1_score": 0.6567647599428309,
+    "latencies_s": [
+     0.16366627699972014,
+     0.08153276699977141,
+     0.013763883999672544
+    ],
+    "latency_median_s": 0.08153276699977141
+   }
+  },
+  {
+   "id": "b14-turbine-blades",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What spins the blades of a wind turbine to make electricity?",
+   "expected_doc": "wind-power",
+   "prod": {
+    "ranked_docs": [
+     "wind-power",
+     "hydro-power",
+     "storms",
+     "solar-power",
+     "photosynthesis",
+     "pollination",
+     "seed-dispersal",
+     "salmon-run",
+     "bird-migration"
+    ],
+    "top1_score": 0.8333333333333334,
+    "latencies_s": [
+     0.000669113999720139,
+     0.0005855489998793928,
+     0.0005931710002187174
+    ],
+    "latency_median_s": 0.0005931710002187174
+   },
+   "li": {
+    "ranked_docs": [
+     "wind-power",
+     "solar-power",
+     "hydro-power",
+     "pollination",
+     "storms",
+     "photosynthesis",
+     "salmon-run",
+     "seed-dispersal",
+     "water-cycle",
+     "bird-migration",
+     "seasons",
+     "bees",
+     "earthquakes",
+     "ocean-tides",
+     "volcanoes",
+     "rivers-and-lakes",
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans",
+     "gravity"
+    ],
+    "top1_score": 0.6998258914877641,
+    "latencies_s": [
+     0.013790504000098736,
+     0.016186521999770775,
+     0.011511443000017607
+    ],
+    "latency_median_s": 0.013790504000098736
+   }
+  },
+  {
+   "id": "b15-hydro-gates",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "How do hydro stations raise or lower output quickly?",
+   "expected_doc": "hydro-power",
+   "prod": {
+    "ranked_docs": [
+     "hydro-power",
+     "wind-power",
+     "gravity",
+     "ocean-tides",
+     "storms"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.000420782000219333,
+     0.0003798199995799223,
+     0.0003719490005096304
+    ],
+    "latency_median_s": 0.0003798199995799223
+   },
+   "li": {
+    "ranked_docs": [
+     "hydro-power",
+     "water-cycle",
+     "rivers-and-lakes",
+     "ocean-tides",
+     "wind-power",
+     "solar-power",
+     "salmon-run",
+     "earthquakes",
+     "photosynthesis",
+     "gravity",
+     "storms",
+     "volcanoes",
+     "northlight-loans",
+     "seed-dispersal",
+     "northlight-hours",
+     "pollination",
+     "northlight-events",
+     "bird-migration",
+     "seasons",
+     "bees"
+    ],
+    "top1_score": 0.6599536724660406,
+    "latencies_s": [
+     0.019211153000469494,
+     0.012456432000362838,
+     0.07735775000037393
+    ],
+    "latency_median_s": 0.019211153000469494
+   }
+  },
+  {
+   "id": "b16-close-time",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What time does the Northlight library close on weekdays?",
+   "expected_doc": "northlight-hours",
+   "prod": {
+    "ranked_docs": [
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans"
+    ],
+    "top1_score": 0.8,
+    "latencies_s": [
+     0.00036810199981118785,
+     0.00034799300010490697,
+     0.0003749329998754547
+    ],
+    "latency_median_s": 0.00036810199981118785
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans",
+     "seasons",
+     "salmon-run",
+     "photosynthesis",
+     "storms",
+     "bird-migration",
+     "ocean-tides",
+     "solar-power",
+     "water-cycle",
+     "hydro-power",
+     "pollination",
+     "bees",
+     "rivers-and-lakes",
+     "seed-dispersal",
+     "earthquakes",
+     "gravity",
+     "wind-power",
+     "volcanoes"
+    ],
+    "top1_score": 0.8562189995380456,
+    "latencies_s": [
+     0.30489898399991944,
+     0.07209172300008504,
+     0.025897120000081486
+    ],
+    "latency_median_s": 0.07209172300008504
+   }
+  },
+  {
+   "id": "b17-storytime",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "When does storytime for young children happen at the Northlight library?",
+   "expected_doc": "northlight-events",
+   "prod": {
+    "ranked_docs": [
+     "northlight-events",
+     "northlight-hours",
+     "photosynthesis",
+     "seasons",
+     "salmon-run",
+     "northlight-loans"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0004544119992715423,
+     0.0004309469995860127,
+     0.00045131700062484015
+    ],
+    "latency_median_s": 0.00045131700062484015
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans",
+     "storms",
+     "seasons",
+     "salmon-run",
+     "water-cycle",
+     "solar-power",
+     "photosynthesis",
+     "bird-migration",
+     "earthquakes",
+     "hydro-power",
+     "rivers-and-lakes",
+     "volcanoes",
+     "wind-power",
+     "ocean-tides",
+     "seed-dispersal",
+     "bees",
+     "pollination",
+     "gravity"
+    ],
+    "top1_score": 0.792076247671787,
+    "latencies_s": [
+     0.07007229100054246,
+     0.012881729999207892,
+     0.07188886900075886
+    ],
+    "latency_median_s": 0.07007229100054246
+   }
+  },
+  {
+   "id": "b18-navigate",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "How do birds navigate during migration?",
+   "expected_doc": "bird-migration",
+   "prod": {
+    "ranked_docs": [
+     "bird-migration",
+     "salmon-run"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0003107659995293943,
+     0.0002689240000108839,
+     0.00028345600003376603
+    ],
+    "latency_median_s": 0.00028345600003376603
+   },
+   "li": {
+    "ranked_docs": [
+     "bird-migration",
+     "seed-dispersal",
+     "pollination",
+     "salmon-run",
+     "bees",
+     "rivers-and-lakes",
+     "water-cycle",
+     "gravity",
+     "ocean-tides",
+     "wind-power",
+     "storms",
+     "seasons",
+     "photosynthesis",
+     "hydro-power",
+     "earthquakes",
+     "solar-power",
+     "northlight-loans",
+     "northlight-events",
+     "northlight-hours",
+     "volcanoes"
+    ],
+    "top1_score": 0.7339361017538569,
+    "latencies_s": [
+     0.011746004999622528,
+     0.011446695999438816,
+     0.009870058000160498
+    ],
+    "latency_median_s": 0.011446695999438816
+   }
+  },
+  {
+   "id": "b19-salmon-eggs",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "Where do salmon lay their eggs when they reach their home stream?",
+   "expected_doc": "salmon-run",
+   "prod": {
+    "ranked_docs": [
+     "salmon-run",
+     "pollination",
+     "bees",
+     "storms",
+     "seed-dispersal",
+     "rivers-and-lakes",
+     "solar-power",
+     "photosynthesis",
+     "northlight-loans"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0006067710000934312,
+     0.0005934609998803353,
+     0.0006770459995095734
+    ],
+    "latency_median_s": 0.0006067710000934312
+   },
+   "li": {
+    "ranked_docs": [
+     "salmon-run",
+     "seed-dispersal",
+     "rivers-and-lakes",
+     "bird-migration",
+     "water-cycle",
+     "pollination",
+     "hydro-power",
+     "northlight-hours",
+     "ocean-tides",
+     "photosynthesis",
+     "northlight-events",
+     "bees",
+     "northlight-loans",
+     "wind-power",
+     "earthquakes",
+     "solar-power",
+     "storms",
+     "volcanoes",
+     "gravity",
+     "seasons"
+    ],
+    "top1_score": 0.6371503327053423,
+    "latencies_s": [
+     0.08805006199963827,
+     0.08236629900056869,
+     0.01304249099939625
+    ],
+    "latency_median_s": 0.08236629900056869
+   }
+  },
+  {
+   "id": "b20-thunder",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What is thunder the sound of during a storm?",
+   "expected_doc": "storms",
+   "prod": {
+    "ranked_docs": [
+     "storms"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.00025529300000926014,
+     0.00024083100015559467,
+     0.00025705600000947015
+    ],
+    "latency_median_s": 0.00025529300000926014
+   },
+   "li": {
+    "ranked_docs": [
+     "storms",
+     "water-cycle",
+     "earthquakes",
+     "ocean-tides",
+     "wind-power",
+     "bird-migration",
+     "volcanoes",
+     "seed-dispersal",
+     "pollination",
+     "salmon-run",
+     "seasons",
+     "northlight-events",
+     "gravity",
+     "northlight-hours",
+     "bees",
+     "rivers-and-lakes",
+     "solar-power",
+     "hydro-power",
+     "photosynthesis",
+     "northlight-loans"
+    ],
+    "top1_score": 0.6790792546849151,
+    "latencies_s": [
+     0.026798893999512075,
+     0.09290380900074524,
+     0.08143037399986497
+    ],
+    "latency_median_s": 0.08143037399986497
+   }
+  },
+  {
+   "id": "b21-seasons-tilt",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "Why does the northern half of the earth get summer while the southern half gets winter?",
+   "expected_doc": "seasons",
+   "prod": {
+    "ranked_docs": [
+     "seasons",
+     "bird-migration",
+     "gravity",
+     "bees",
+     "volcanoes",
+     "water-cycle",
+     "earthquakes"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0005254289999356843,
+     0.0005109769999762648,
+     0.0005238160001681536
+    ],
+    "latency_median_s": 0.0005238160001681536
+   },
+   "li": {
+    "ranked_docs": [
+     "seasons",
+     "water-cycle",
+     "bird-migration",
+     "rivers-and-lakes",
+     "photosynthesis",
+     "northlight-hours",
+     "solar-power",
+     "pollination",
+     "ocean-tides",
+     "northlight-loans",
+     "northlight-events",
+     "wind-power",
+     "storms",
+     "volcanoes",
+     "seed-dispersal",
+     "gravity",
+     "bees",
+     "earthquakes",
+     "salmon-run",
+     "hydro-power"
+    ],
+    "top1_score": 0.6485352161373212,
+    "latencies_s": [
+     0.26804337199973816,
+     0.02100512500055629,
+     0.021134069000254385
+    ],
+    "latency_median_s": 0.021134069000254385
+   }
+  },
+  {
+   "id": "b22-valleys",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What do rivers carry downstream as they shape valleys?",
+   "expected_doc": "rivers-and-lakes",
+   "prod": {
+    "ranked_docs": [
+     "rivers-and-lakes",
+     "bees",
+     "pollination",
+     "salmon-run",
+     "northlight-loans",
+     "seed-dispersal",
+     "water-cycle",
+     "hydro-power"
+    ],
+    "top1_score": 0.6666666666666666,
+    "latencies_s": [
+     0.0005610129992419388,
+     0.0005502359999809414,
+     0.0005311869999786722
+    ],
+    "latency_median_s": 0.0005502359999809414
+   },
+   "li": {
+    "ranked_docs": [
+     "rivers-and-lakes",
+     "hydro-power",
+     "water-cycle",
+     "salmon-run",
+     "seed-dispersal",
+     "ocean-tides",
+     "bird-migration",
+     "earthquakes",
+     "wind-power",
+     "storms",
+     "volcanoes",
+     "seasons",
+     "pollination",
+     "gravity",
+     "bees",
+     "solar-power",
+     "northlight-loans",
+     "photosynthesis",
+     "northlight-events",
+     "northlight-hours"
+    ],
+    "top1_score": 0.6721255995630421,
+    "latencies_s": [
+     0.012062118999892846,
+     0.07891560799998842,
+     0.08182220199978474
+    ],
+    "latency_median_s": 0.07891560799998842
+   }
+  },
+  {
+   "id": "b23-loan-weeks",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "For how many weeks can members borrow books at the Northlight library?",
+   "expected_doc": "northlight-loans",
+   "prod": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-events",
+     "northlight-hours",
+     "pollination",
+     "rivers-and-lakes",
+     "volcanoes",
+     "bees",
+     "solar-power",
+     "bird-migration"
+    ],
+    "top1_score": 0.7142857142857143,
+    "latencies_s": [
+     0.0006825849995948374,
+     0.000684917999933532,
+     0.0006759349998901598
+    ],
+    "latency_median_s": 0.0006825849995948374
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-hours",
+     "northlight-events",
+     "water-cycle",
+     "seasons",
+     "bird-migration",
+     "photosynthesis",
+     "rivers-and-lakes",
+     "salmon-run",
+     "ocean-tides",
+     "storms",
+     "seed-dispersal",
+     "gravity",
+     "hydro-power",
+     "solar-power",
+     "bees",
+     "pollination",
+     "volcanoes",
+     "wind-power",
+     "earthquakes"
+    ],
+    "top1_score": 0.7086590029114925,
+    "latencies_s": [
+     0.01139607899949624,
+     0.012911554999845976,
+     0.012652366000111215
+    ],
+    "latency_median_s": 0.012652366000111215
+   }
+  },
+  {
+   "id": "b24-bees-collect",
+   "slice": "in_corpus",
+   "category": "regression",
+   "question": "What do honey bees collect from flowers to feed their colony?",
+   "expected_doc": "bees",
+   "prod": {
+    "ranked_docs": [
+     "bees",
+     "pollination",
+     "salmon-run",
+     "water-cycle",
+     "seed-dispersal",
+     "photosynthesis"
+    ],
+    "top1_score": 1.0,
+    "latencies_s": [
+     0.0005267610004011658,
+     0.0005171359998712433,
+     0.000498098000207392
+    ],
+    "latency_median_s": 0.0005171359998712433
+   },
+   "li": {
+    "ranked_docs": [
+     "bees",
+     "pollination",
+     "seed-dispersal",
+     "bird-migration",
+     "photosynthesis",
+     "gravity",
+     "solar-power",
+     "ocean-tides",
+     "seasons",
+     "rivers-and-lakes",
+     "water-cycle",
+     "salmon-run",
+     "wind-power",
+     "hydro-power",
+     "northlight-loans",
+     "northlight-events",
+     "northlight-hours",
+     "volcanoes",
+     "earthquakes",
+     "storms"
+    ],
+    "top1_score": 0.7934797928106581,
+    "latencies_s": [
+     0.07882986999993591,
+     0.012789680999958364,
+     0.07509820700033742
+    ],
+    "latency_median_s": 0.07509820700033742
+   }
+  },
+  {
+   "id": "p01-condensation",
+   "slice": "in_corpus",
+   "category": "paraphrase",
+   "question": "How does moisture in the atmosphere become droplets that gather overhead?",
+   "expected_doc": "water-cycle",
+   "prod": {
+    "ranked_docs": [
+     "volcanoes",
+     "bees",
+     "salmon-run"
+    ],
+    "top1_score": 0.16666666666666666,
+    "latencies_s": [
+     0.00028320500041445484,
+     0.0002753729995674803,
+     0.0002843470001607784
+    ],
+    "latency_median_s": 0.00028320500041445484
+   },
+   "li": {
+    "ranked_docs": [
+     "water-cycle",
+     "storms",
+     "gravity",
+     "seed-dispersal",
+     "photosynthesis",
+     "bird-migration",
+     "rivers-and-lakes",
+     "seasons",
+     "ocean-tides",
+     "wind-power",
+     "pollination",
+     "solar-power",
+     "hydro-power",
+     "earthquakes",
+     "northlight-hours",
+     "volcanoes",
+     "northlight-loans",
+     "salmon-run",
+     "northlight-events",
+     "bees"
+    ],
+    "top1_score": 0.506748698635936,
+    "latencies_s": [
+     0.014679599000373855,
+     0.08439823900062038,
+     0.013703793999411573
+    ],
+    "latency_median_s": 0.014679599000373855
+   }
+  },
+  {
+   "id": "p02-molten",
+   "slice": "in_corpus",
+   "category": "paraphrase",
+   "question": "What do you call hot liquid rock while it is subterranean, and after it emerges?",
+   "expected_doc": "volcanoes",
+   "prod": {
+    "ranked_docs": [
+     "ocean-tides",
+     "volcanoes",
+     "bees",
+     "seasons",
+     "seed-dispersal",
+     "earthquakes"
+    ],
+    "top1_score": 0.1111111111111111,
+    "latencies_s": [
+     0.00042128200038860086,
+     0.00041378100013389485,
+     0.0004060789997311076
+    ],
+    "latency_median_s": 0.00041378100013389485
+   },
+   "li": {
+    "ranked_docs": [
+     "volcanoes",
+     "earthquakes",
+     "rivers-and-lakes",
+     "water-cycle",
+     "seed-dispersal",
+     "storms",
+     "ocean-tides",
+     "gravity",
+     "hydro-power",
+     "bird-migration",
+     "pollination",
+     "salmon-run",
+     "solar-power",
+     "bees",
+     "photosynthesis",
+     "northlight-events",
+     "wind-power",
+     "seasons",
+     "northlight-hours",
+     "northlight-loans"
+    ],
+    "top1_score": 0.43243675682326954,
+    "latencies_s": [
+     0.08019109300039418,
+     0.013107548000334646,
+     0.019813205999525962
+    ],
+    "latency_median_s": 0.019813205999525962
+   }
+  },
+  {
+   "id": "p05-storytelling",
+   "slice": "in_corpus",
+   "category": "paraphrase",
+   "question": "When is the weekly storytelling gathering for youngsters at Northlight?",
+   "expected_doc": "northlight-events",
+   "prod": {
+    "ranked_docs": [
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans"
+    ],
+    "top1_score": 0.2,
+    "latencies_s": [
+     0.00028863300030934624,
+     0.0002845170001819497,
+     0.00029387100039457437
+    ],
+    "latency_median_s": 0.00028863300030934624
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans",
+     "storms",
+     "seasons",
+     "salmon-run",
+     "bird-migration",
+     "water-cycle",
+     "earthquakes",
+     "solar-power",
+     "volcanoes",
+     "bees",
+     "wind-power",
+     "hydro-power",
+     "seed-dispersal",
+     "photosynthesis",
+     "rivers-and-lakes",
+     "pollination",
+     "ocean-tides",
+     "gravity"
+    ],
+    "top1_score": 0.6926056451354524,
+    "latencies_s": [
+     0.030460011000286613,
+     0.08279154800038668,
+     0.0724809280000045
+    ],
+    "latency_median_s": 0.0724809280000045
+   }
+  },
+  {
+   "id": "p06-byproduct",
+   "slice": "in_corpus",
+   "category": "paraphrase",
+   "question": "Which airborne byproduct do leafy plants emit while manufacturing nourishment?",
+   "expected_doc": "photosynthesis",
+   "prod": {
+    "ranked_docs": [
+     "seasons",
+     "photosynthesis",
+     "bees",
+     "pollination",
+     "seed-dispersal"
+    ],
+    "top1_score": 0.25,
+    "latencies_s": [
+     0.0003689539998958935,
+     0.0003564449998521013,
+     0.0003771860001506866
+    ],
+    "latency_median_s": 0.0003689539998958935
+   },
+   "li": {
+    "ranked_docs": [
+     "photosynthesis",
+     "pollination",
+     "wind-power",
+     "seed-dispersal",
+     "water-cycle",
+     "solar-power",
+     "storms",
+     "bees",
+     "bird-migration",
+     "seasons",
+     "hydro-power",
+     "northlight-hours",
+     "gravity",
+     "rivers-and-lakes",
+     "volcanoes",
+     "ocean-tides",
+     "northlight-loans",
+     "northlight-events",
+     "earthquakes",
+     "salmon-run"
+    ],
+    "top1_score": 0.419316902393271,
+    "latencies_s": [
+     0.27493540899922664,
+     0.08892729900071572,
+     0.012888960000054794
+    ],
+    "latency_median_s": 0.08892729900071572
+   }
+  },
+  {
+   "id": "a01-newton-year",
+   "slice": "adversarial",
+   "category": "absent_detail",
+   "question": "In what year did Isaac Newton publish his description of gravity as a universal attraction between masses?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "gravity",
+     "volcanoes",
+     "wind-power",
+     "ocean-tides",
+     "bird-migration",
+     "rivers-and-lakes",
+     "seasons",
+     "storms",
+     "water-cycle",
+     "bees"
+    ],
+    "top1_score": 0.6363636363636364,
+    "latencies_s": [
+     0.0007177879997470882,
+     0.0006629360004808404,
+     0.0006862099999125348
+    ],
+    "latency_median_s": 0.0006862099999125348
+   },
+   "li": {
+    "ranked_docs": [
+     "gravity",
+     "seed-dispersal",
+     "pollination",
+     "earthquakes",
+     "ocean-tides",
+     "bees",
+     "photosynthesis",
+     "bird-migration",
+     "northlight-events",
+     "water-cycle",
+     "northlight-loans",
+     "hydro-power",
+     "storms",
+     "northlight-hours",
+     "volcanoes",
+     "wind-power",
+     "solar-power",
+     "rivers-and-lakes",
+     "seasons",
+     "salmon-run"
+    ],
+    "top1_score": 0.5775144097645655,
+    "latencies_s": [
+     0.013502652000170201,
+     0.023463866999918537,
+     0.011652723999759473
+    ],
+    "latency_median_s": 0.013502652000170201
+   }
+  },
+  {
+   "id": "a02-library-holdings",
+   "slice": "adversarial",
+   "category": "absent_detail",
+   "question": "How many books in total does the Northlight library own?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans",
+     "pollination",
+     "rivers-and-lakes",
+     "volcanoes",
+     "bees",
+     "solar-power",
+     "bird-migration"
+    ],
+    "top1_score": 0.5,
+    "latencies_s": [
+     0.0005895550002605887,
+     0.0005640769995807204,
+     0.0005752229999416159
+    ],
+    "latency_median_s": 0.0005752229999416159
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans",
+     "salmon-run",
+     "photosynthesis",
+     "solar-power",
+     "bees",
+     "bird-migration",
+     "seed-dispersal",
+     "seasons",
+     "water-cycle",
+     "hydro-power",
+     "ocean-tides",
+     "rivers-and-lakes",
+     "storms",
+     "wind-power",
+     "pollination",
+     "earthquakes",
+     "gravity",
+     "volcanoes"
+    ],
+    "top1_score": 0.6159931694518062,
+    "latencies_s": [
+     0.011735608999515534,
+     0.0737763229999473,
+     0.08208045899937133
+    ],
+    "latency_median_s": 0.0737763229999473
+   }
+  },
+  {
+   "id": "a03-salmon-days",
+   "slice": "adversarial",
+   "category": "absent_detail",
+   "question": "How many days does the salmon journey from the ocean back to the home stream take?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "salmon-run",
+     "rivers-and-lakes",
+     "solar-power",
+     "bird-migration",
+     "ocean-tides",
+     "gravity",
+     "water-cycle",
+     "storms",
+     "northlight-loans",
+     "northlight-hours",
+     "pollination",
+     "volcanoes",
+     "bees"
+    ],
+    "top1_score": 0.6666666666666666,
+    "latencies_s": [
+     0.0007934810000733705,
+     0.0007970770002430072,
+     0.0007882240006438224
+    ],
+    "latency_median_s": 0.0007934810000733705
+   },
+   "li": {
+    "ranked_docs": [
+     "salmon-run",
+     "rivers-and-lakes",
+     "water-cycle",
+     "northlight-hours",
+     "bird-migration",
+     "ocean-tides",
+     "seed-dispersal",
+     "northlight-events",
+     "hydro-power",
+     "northlight-loans",
+     "storms",
+     "photosynthesis",
+     "seasons",
+     "wind-power",
+     "pollination",
+     "earthquakes",
+     "bees",
+     "volcanoes",
+     "solar-power",
+     "gravity"
+    ],
+    "top1_score": 0.5475256861169766,
+    "latencies_s": [
+     0.08575084099993546,
+     0.016584189000241167,
+     0.08489603700036241
+    ],
+    "latency_median_s": 0.08489603700036241
+   }
+  },
+  {
+   "id": "a04-magma-temperature",
+   "slice": "adversarial",
+   "category": "absent_detail",
+   "question": "At what temperature in degrees does magma become lava when it reaches the surface?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "volcanoes",
+     "seasons",
+     "earthquakes"
+    ],
+    "top1_score": 0.7142857142857143,
+    "latencies_s": [
+     0.00039852800000517163,
+     0.0003791700000874698,
+     0.000369384999430622
+    ],
+    "latency_median_s": 0.0003791700000874698
+   },
+   "li": {
+    "ranked_docs": [
+     "volcanoes",
+     "earthquakes",
+     "water-cycle",
+     "ocean-tides",
+     "seasons",
+     "rivers-and-lakes",
+     "storms",
+     "pollination",
+     "bees",
+     "gravity",
+     "hydro-power",
+     "bird-migration",
+     "solar-power",
+     "seed-dispersal",
+     "northlight-events",
+     "northlight-hours",
+     "photosynthesis",
+     "salmon-run",
+     "wind-power",
+     "northlight-loans"
+    ],
+    "top1_score": 0.5018335223912272,
+    "latencies_s": [
+     0.09848318499916786,
+     0.015034162000119977,
+     0.024668455000210088
+    ],
+    "latency_median_s": 0.024668455000210088
+   }
+  },
+  {
+   "id": "a05-sunday-night",
+   "slice": "adversarial",
+   "category": "false_premise",
+   "question": "Why does the Northlight library stay open all night on Sundays?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "northlight-hours",
+     "solar-power",
+     "northlight-events",
+     "gravity",
+     "northlight-loans"
+    ],
+    "top1_score": 0.8571428571428571,
+    "latencies_s": [
+     0.00044455799979914445,
+     0.0004762349999509752,
+     0.0004602609997164109
+    ],
+    "latency_median_s": 0.0004602609997164109
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-hours",
+     "northlight-events",
+     "northlight-loans",
+     "solar-power",
+     "photosynthesis",
+     "seasons",
+     "bird-migration",
+     "ocean-tides",
+     "storms",
+     "salmon-run",
+     "water-cycle",
+     "hydro-power",
+     "bees",
+     "wind-power",
+     "pollination",
+     "gravity",
+     "rivers-and-lakes",
+     "seed-dispersal",
+     "volcanoes",
+     "earthquakes"
+    ],
+    "top1_score": 0.8103488142462013,
+    "latencies_s": [
+     0.1189789270001711,
+     0.07672050199926161,
+     0.07477587399989716
+    ],
+    "latency_median_s": 0.07672050199926161
+   }
+  },
+  {
+   "id": "a06-moonlight-cells",
+   "slice": "adversarial",
+   "category": "false_premise",
+   "question": "What do photovoltaic cells release when moonlight strikes them at night?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "solar-power",
+     "photosynthesis",
+     "earthquakes"
+    ],
+    "top1_score": 0.7142857142857143,
+    "latencies_s": [
+     0.00040080199960357277,
+     0.00039656500030105235,
+     0.00038250400029937737
+    ],
+    "latency_median_s": 0.00039656500030105235
+   },
+   "li": {
+    "ranked_docs": [
+     "solar-power",
+     "photosynthesis",
+     "northlight-hours",
+     "storms",
+     "water-cycle",
+     "ocean-tides",
+     "bees",
+     "wind-power",
+     "pollination",
+     "gravity",
+     "hydro-power",
+     "seasons",
+     "northlight-loans",
+     "northlight-events",
+     "bird-migration",
+     "seed-dispersal",
+     "volcanoes",
+     "rivers-and-lakes",
+     "earthquakes",
+     "salmon-run"
+    ],
+    "top1_score": 0.5593979287648424,
+    "latencies_s": [
+     0.16061221200016007,
+     0.0119703810005376,
+     0.02059621199987305
+    ],
+    "latency_median_s": 0.02059621199987305
+   }
+  },
+  {
+   "id": "a07-dance-warning",
+   "slice": "adversarial",
+   "category": "false_premise",
+   "question": "How do bees use the waggle dance to warn the colony about incoming storms?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "bees",
+     "storms",
+     "pollination",
+     "solar-power"
+    ],
+    "top1_score": 0.4444444444444444,
+    "latencies_s": [
+     0.00041074599994317396,
+     0.00042086199937330093,
+     0.0004163549992881599
+    ],
+    "latency_median_s": 0.0004163549992881599
+   },
+   "li": {
+    "ranked_docs": [
+     "bees",
+     "pollination",
+     "storms",
+     "seed-dispersal",
+     "bird-migration",
+     "ocean-tides",
+     "solar-power",
+     "photosynthesis",
+     "wind-power",
+     "gravity",
+     "seasons",
+     "water-cycle",
+     "earthquakes",
+     "hydro-power",
+     "northlight-events",
+     "volcanoes",
+     "salmon-run",
+     "northlight-hours",
+     "northlight-loans",
+     "rivers-and-lakes"
+    ],
+    "top1_score": 0.6535328753586552,
+    "latencies_s": [
+     0.03513225499955297,
+     0.012268188999769336,
+     0.015815574000043853
+    ],
+    "latency_median_s": 0.015815574000043853
+   }
+  },
+  {
+   "id": "a08-joining-fee",
+   "slice": "adversarial",
+   "category": "false_premise",
+   "question": "What fee does the Northlight library charge new members to join?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-hours",
+     "northlight-events",
+     "seed-dispersal",
+     "rivers-and-lakes"
+    ],
+    "top1_score": 0.42857142857142855,
+    "latencies_s": [
+     0.00047378099952766206,
+     0.0004576170003929292,
+     0.0004754330002469942
+    ],
+    "latency_median_s": 0.00047378099952766206
+   },
+   "li": {
+    "ranked_docs": [
+     "northlight-loans",
+     "northlight-hours",
+     "northlight-events",
+     "gravity",
+     "seed-dispersal",
+     "bird-migration",
+     "photosynthesis",
+     "salmon-run",
+     "storms",
+     "water-cycle",
+     "seasons",
+     "pollination",
+     "solar-power",
+     "bees",
+     "ocean-tides",
+     "hydro-power",
+     "wind-power",
+     "volcanoes",
+     "rivers-and-lakes",
+     "earthquakes"
+    ],
+    "top1_score": 0.5158693475107757,
+    "latencies_s": [
+     0.09771810700021888,
+     0.08803946599982737,
+     0.07588084199960576
+    ],
+    "latency_median_s": 0.08803946599982737
+   }
+  },
+  {
+   "id": "a09-vaccines",
+   "slice": "adversarial",
+   "category": "out_of_corpus",
+   "question": "How do vaccines train the immune system to recognise a disease?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [],
+    "top1_score": null,
+    "latencies_s": [
+     6.480699994426686e-05,
+     6.365599983837456e-05,
+     6.355599998641992e-05
+    ],
+    "latency_median_s": 6.365599983837456e-05
+   },
+   "li": {
+    "ranked_docs": [
+     "bees",
+     "storms",
+     "pollination",
+     "wind-power",
+     "bird-migration",
+     "solar-power",
+     "gravity",
+     "seasons",
+     "photosynthesis",
+     "water-cycle",
+     "rivers-and-lakes",
+     "seed-dispersal",
+     "hydro-power",
+     "volcanoes",
+     "ocean-tides",
+     "salmon-run",
+     "earthquakes",
+     "northlight-events",
+     "northlight-hours",
+     "northlight-loans"
+    ],
+    "top1_score": 0.1762825697408387,
+    "latencies_s": [
+     0.10172951000004105,
+     0.0855851710002753,
+     0.01409650400000828
+    ],
+    "latency_median_s": 0.0855851710002753
+   }
+  },
+  {
+   "id": "a10-capital",
+   "slice": "adversarial",
+   "category": "out_of_corpus",
+   "question": "What is the capital city of Australia?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [],
+    "top1_score": null,
+    "latencies_s": [
+     4.5247999878483824e-05,
+     4.367600013210904e-05,
+     4.4227000216778833e-05
+    ],
+    "latency_median_s": 4.4227000216778833e-05
+   },
+   "li": {
+    "ranked_docs": [
+     "earthquakes",
+     "bees",
+     "ocean-tides",
+     "rivers-and-lakes",
+     "wind-power",
+     "bird-migration",
+     "gravity",
+     "water-cycle",
+     "volcanoes",
+     "hydro-power",
+     "seed-dispersal",
+     "seasons",
+     "storms",
+     "northlight-events",
+     "pollination",
+     "solar-power",
+     "northlight-hours",
+     "photosynthesis",
+     "northlight-loans",
+     "salmon-run"
+    ],
+    "top1_score": 0.11367595515577852,
+    "latencies_s": [
+     0.07956064700010756,
+     0.021817304999785847,
+     0.0773847400005252
+    ],
+    "latency_median_s": 0.0773847400005252
+   }
+  },
+  {
+   "id": "a11-diesel",
+   "slice": "adversarial",
+   "category": "out_of_corpus",
+   "question": "How does a diesel engine ignite its fuel without spark plugs?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "storms"
+    ],
+    "top1_score": 0.16666666666666666,
+    "latencies_s": [
+     0.0002586390000942629,
+     0.00025853900024230825,
+     0.0002464300005158293
+    ],
+    "latency_median_s": 0.00025853900024230825
+   },
+   "li": {
+    "ranked_docs": [
+     "pollination",
+     "photosynthesis",
+     "hydro-power",
+     "earthquakes",
+     "bees",
+     "salmon-run",
+     "volcanoes",
+     "wind-power",
+     "water-cycle",
+     "gravity",
+     "seed-dispersal",
+     "rivers-and-lakes",
+     "bird-migration",
+     "solar-power",
+     "northlight-events",
+     "northlight-hours",
+     "storms",
+     "northlight-loans",
+     "seasons",
+     "ocean-tides"
+    ],
+    "top1_score": 0.18381577880333885,
+    "latencies_s": [
+     0.21502549400065618,
+     0.07567512399964471,
+     0.024708044999897538
+    ],
+    "latency_median_s": 0.07567512399964471
+   }
+  },
+  {
+   "id": "a12-house-prices",
+   "slice": "adversarial",
+   "category": "out_of_corpus",
+   "question": "Why do house prices usually rise when interest rates fall?",
+   "expected_doc": null,
+   "prod": {
+    "ranked_docs": [
+     "wind-power",
+     "ocean-tides",
+     "water-cycle",
+     "gravity",
+     "storms"
+    ],
+    "top1_score": 0.2857142857142857,
+    "latencies_s": [
+     0.0003949729998566909,
+     0.00040237400025944225,
+     0.000401201999920886
+    ],
+    "latency_median_s": 0.000401201999920886
+   },
+   "li": {
+    "ranked_docs": [
+     "water-cycle",
+     "seasons",
+     "ocean-tides",
+     "solar-power",
+     "northlight-loans",
+     "gravity",
+     "wind-power",
+     "earthquakes",
+     "storms",
+     "bird-migration",
+     "rivers-and-lakes",
+     "hydro-power",
+     "volcanoes",
+     "seed-dispersal",
+     "bees",
+     "pollination",
+     "photosynthesis",
+     "northlight-events",
+     "salmon-run",
+     "northlight-hours"
+    ],
+    "top1_score": 0.19587113463209768,
+    "latencies_s": [
+     0.21324720499978866,
+     0.011546775000169873,
+     0.07975759300006757
+    ],
+    "latency_median_s": 0.07975759300006757
+   }
+  }
+ ]
+}

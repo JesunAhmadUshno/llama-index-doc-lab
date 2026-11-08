@@ -161,6 +161,7 @@ def main():
         "questions": out_questions,
     }
     out_path = ROOT / "results" / "raw_runs.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(raw, indent=1))
     print(f"wrote {out_path}")
     print(f"prod build median {prod_record['build_median_s']:.3f}s, "

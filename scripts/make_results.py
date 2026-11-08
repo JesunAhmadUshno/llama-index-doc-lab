@@ -142,11 +142,11 @@ def main():
                  f"{fmt(l['latency_p95_s'])} |")
     pb, lb = raw["builds"]["prod"], raw["builds"]["li"]
     lines.append(f"| Index build time, median of 3 (s) | "
-                 f"{fmt(pb['build_median_s'], 3)} | "
-                 f"{fmt(lb['build_median_s'], 3)} |")
+                 f"{fmt(pb['build_median_s'], 4)} | "
+                 f"{fmt(lb['build_median_s'], 4)} |")
     lines.append(f"| Build time per document (s) | "
-                 f"{fmt(pb['build_per_doc_s'], 3)} | "
-                 f"{fmt(lb['build_per_doc_s'], 3)} |")
+                 f"{fmt(pb['build_per_doc_s'], 4)} | "
+                 f"{fmt(lb['build_per_doc_s'], 4)} |")
     lines.append(f"| Index size on disk (bytes) | {pb['index_bytes']} | "
                  f"{lb['index_bytes']} |")
     lines.append(f"| Index units | {pb['chunk_count']} chunks | "

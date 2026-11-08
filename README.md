@@ -1,0 +1,119 @@
+# llama-index-doc-lab
+
+Does LlamaIndex's indexing and retrieval stack beat, match, or
+trail the retrieval approach already built and measured in the
+rag-foundation production project, on one fixed corpus and one
+frozen question set? Pre-registered in PREREGISTRATION.md (the
+first content commit), measured once, verdicts computed by
+scripts/make_results.py from results/raw_runs.json.
+
+## Headline verdicts
+
+| Hypothesis | Frozen line | Verdict | Measured |
+| --- | --- | --- | --- |
+| H1: top-5 hit rates differ by at least 0.10 | symmetric, either direction | REFUTED | production 0.9643, LlamaIndex 1.0000, difference 0.0357 |
+| H2: spurious retrieval rates differ by at least 0.25 | symmetric, either direction | CONFIRMED | production 0.7500, LlamaIndex 0.4167, difference 0.3333 |
+| H3: LlamaIndex build time per document within 0.5x to 2.0x of production | band | REFUTED | ratio 537.8x (1.507 s vs 0.003 s per build) |
+
+| Measure | Production | LlamaIndex 0.14.25 |
+| --- | --- | --- |
+| Top-1 hit rate (28 in-corpus) | 0.8214 (23/28) | 1.0000 (28/28) |
+| Top-5 hit rate | 0.9643 (27/28) | 1.0000 (28/28) |
+| MRR | 0.8929 | 1.0000 |
+| Spurious rate (12 adversarial, own floor) | 0.7500 (9/12) | 0.4167 (5/12) |
+| Query latency median / p95 (s) | 0.0005 / 0.0006 | 0.0738 / 0.0979 |
+| Index size (bytes) | 51,463 | 207,734 |
+| Index units | 41 chunks | 20 nodes |
+
+Integrity gate: the production arm reproduces the sibling record
+exactly (mlops-evidence-lab measured top-1 at 23 of 28;
+results/rag_samples.json there), so the harness is verified against
+an independent measurement before the framework arm is scored.
+
+## Reading the result
+
+LlamaIndex ranks the ground-truth document first on all 28
+in-corpus questions, a clean sweep at top-1. H1 is still REFUTED,
+because the frozen line was top-5, where the production hybrid is
+already at 27 of 28 and the gap (0.0357) sits inside the tie band.
+The framework wins the ranking contest; it does not clear the
+pre-registered margin at the depth the hypothesis named.
+
+On out-of-corpus questions the arms differ the other way than
+intuition suggests, and the difference is structural. The
+production hybrid's rerank coverage gives high scores to documents
+that share question terms even when the answer is absent (9 of 12
+spurious, including all four false-premise questions). LlamaIndex
+always returns a nearest neighbour too, but its cosine scores for
+absent answers mostly fall below its own calibrated floor (5 of
+12 spurious). Both arms usually pick the same top-1 document on
+adversarial questions; the behaviour difference is the score, not
+the pick. Neither arm is a refusal system: the production arm's
+only true refusals are the two questions sharing no content term
+with any chunk, where it returns nothing at all.
+
+The convenience tax is real at this scale: building the
+LlamaIndex index takes about 538 times the production build
+(1.507 s against 0.003 s, medians of three), the index is about
+four times the bytes, and each query costs about 150 times the
+latency because every query is embedded by a neural model. All
+three gaps are prices of dense retrieval itself, not of this
+framework alone, and at 20 documents they are also trivial in
+absolute terms. Under framework defaults the corpus produces
+exactly one node per document (documents are 72 to 87 words,
+under the 1,024-token default chunk size), so the study measures
+document-level dense retrieval against the production chunk
+hybrid, and says nothing about LlamaIndex chunking at scale.
+
+Why this matters beyond this repo: every team adopting a
+retrieval framework is betting its search quality on defaults it
+has not measured: chunk sizes, embedding models, similarity
+behaviour on questions the corpus cannot answer. Those defaults
+are behaviours, and behaviours differ in ways that only show up
+against ground truth. A frozen question set turns that bet into a
+number, in both directions: here it would have bought a perfect
+top-1 ranking and fewer confident wrong retrievals, at roughly
+500 times the indexing cost, and no vendor page states any of
+those three figures for your corpus.
+
+## What was compared
+
+- Production arm: the rag-foundation Build-stage hybrid pipeline
+  (BM25 plus TF-IDF, reciprocal rank fusion, coverage rerank),
+  vendored byte-identical under src/prodref/ from
+  JesunAhmadUshno/rag-foundation commit
+  007e33238e6ce49100650b30f6820149410f022b (hashes in
+  src/prodref/PROVENANCE.md).
+- Framework arm: LlamaIndex 0.14.25, VectorStoreIndex with every
+  framework default (SentenceSplitter 1,024 tokens, overlap 20;
+  SimpleVectorStore), local embedding
+  sentence-transformers/all-MiniLM-L6-v2 at revision
+  1110a243fdf4706b3f48f1d95db1a4f5529b4d41. The local route was
+  chosen over the hosted Gemini route because the sibling studies
+  recorded that route rate-limiting under burst load; DECISIONS.md
+  D1.
+- Question set: data/questions.json, byte-identical to
+  JesunAhmadUshno/mlops-evidence-lab data/questions.json at commit
+  6ee6ef19432bc65522454fb0b708af7d5eda8e50 (sha256
+  f1b52a8d79ca1315f7a632cc659118101fab11821fe97d6b20d2d39a9ae0079b):
+  28 in-corpus questions with ground-truth documents, 12 labelled
+  adversarial out-of-corpus questions.
+- Scope: indexing and retrieval only. No answer generation, no
+  LLM judge.
+
+## Reproduce
+
+```bash
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt pytest
+.venv/bin/python -m pytest -q
+.venv/bin/python scripts/run_study.py
+.venv/bin/python scripts/make_results.py
+.venv/bin/python scripts/jev_claim_check.py
+```
+
+run_study.py downloads the embedding model once (about 91 MB),
+then runs fully offline. RESULTS.md is generated, never edited by
+hand. AUDIT.md carries the honest grade and its deductions.
+DECISIONS.md records the route choices and the two failed run
+attempts that preceded the scored pass.
