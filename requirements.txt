@@ -1,0 +1,10 @@
+# Study runtime pins (versions as frozen in PREREGISTRATION.md).
+# torch is the CPU build: on this machine it was installed as
+# 2.15.0+cpu from https://download.pytorch.org/whl/cpu (DECISIONS D2);
+# the version pin below is the same release line.
+llama-index==0.14.25
+llama-index-core==0.14.25
+llama-index-embeddings-huggingface==0.8.0
+sentence-transformers==6.2.0
+torch==2.15.0
+numpy==2.5.4
