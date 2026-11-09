@@ -1,64 +1,121 @@
-# AUDIT
+# Audit (the study report)
 
-Self-audit of llama-index-doc-lab against the standing project
-standard, written after the results were computed and before the
-results commit.
+This file is the report in the portfolio standard's sense. It keeps
+the name AUDIT.md, the name it was published under with the results;
+PREREGISTRATION.md does not name a report file, so nothing in the
+lock depends on it. Written after the results were computed and
+before the results commit; restructured on 2026-11-08 for the
+portfolio standard v2 (grade removed, since grades are internal;
+every limitation it listed is kept below under Threats to validity).
 
-## Grade: 5,000 of 10,000
+Status, 2026-11-08: one scored pass, as registered, on the machine of
+record htch-runtime. Verdicts are computed by scripts/make_results.py
+from results/raw_runs.json and published in RESULTS.md.
 
-What is solid: the pre-registration is the first content commit
-(9534f68) and froze the arms, the floor rule, the margins and the
-stop rule before any measured run. The question set and both
-vendored production files are byte-identical to their pinned
-sources, verified by sha256 in the test suite. The production arm
-reproduces the sibling record exactly (top-1, 23 of 28), which
-verifies the harness against an independent measurement. Verdicts
-are computed by scripts/make_results.py from
-results/raw_runs.json, and every headline figure was recomputed
-from the raw records by a separate recount before this audit was
-written; the recount matched on every figure. Two of the three
-verdicts are refutations of the framework-friendly reading (H1
-tie at top-5, H3 build cost far outside the band), published as
-measured. The two failed run attempts are disclosed in
-DECISIONS.md (D4, D5) rather than buried.
+## Results against the pre-registration
 
-Itemized deductions:
+| Hypothesis | Frozen line | Verdict | Measured |
+| --- | --- | --- | --- |
+| H1: top-5 hit rates differ | absolute difference at least 0.10 | REFUTED | production 27/28, LlamaIndex 28/28, difference 0.0357 |
+| H2: spurious retrieval rates differ | absolute difference at least 0.25 | CONFIRMED | production 9/12, LlamaIndex 5/12, difference 0.3333 |
+| H3: LlamaIndex build cost per document about the same | ratio LI/PROD within [0.5, 2.0] | REFUTED | ratio 537.8 (medians of three builds) |
 
-- Minus 1,800: the corpus is tiny and synthetic (20 documents,
-  1,588 words), inherited from the fixed inputs. The verdicts
-  describe this corpus only; nothing here licenses a claim about
-  retrieval at production corpus scale.
-- Minus 900: one embedding model, CPU only, one machine, one
-  scored pass. Build and latency figures are medians of three,
-  but there is no cross-model or cross-machine variance estimate.
-- Minus 800: under the frozen defaults the LlamaIndex arm holds
-  exactly one node per document, so the study measures
+Two of three hypotheses missed their lines and are published as
+measured. The harness integrity gate (production top-1 must equal the
+sibling record, 23 of 28) passed before any LlamaIndex figure was
+scored.
+
+## How the evidence is protected
+
+1. Pre-registration before results. PREREGISTRATION.md is the first
+   content commit (9534f68, 2026-11-08 20:45:48 UTC) and the only file
+   in it. It froze the arms, the floor rule, the margins and the stop
+   rule. No later commit touches it; tests/test_layout.py pins its
+   SHA-256, so one changed byte fails CI. The harness commit (9234c43)
+   and the results commit (4dc544a) follow it, and the raw run records
+   carry the timestamp 2026-11-08 20:52:04 UTC.
+2. Frozen inputs, checked in code. The question set and both vendored
+   production files are byte-identical to their pinned sources,
+   verified by sha256 in tests/test_units.py.
+3. An independent harness check. The production arm reproduces the
+   sibling record exactly (top-1, 23 of 28, measured in
+   mlops-evidence-lab), so the harness is verified against a separate
+   measurement before the framework arm is scored. The same gate runs
+   as a test and in scripts/make_results.py, which refuses to write
+   results when it fails.
+4. Numbers come from scripts. Verdicts are computed by
+   scripts/make_results.py from results/raw_runs.json; CI regenerates
+   RESULTS.md and results/ and fails on any byte of difference. Every
+   headline figure was also recomputed from the raw records by a
+   separate recount before this audit was written; the recount matched
+   on every figure.
+5. Versions recorded with the result. results/raw_runs.json carries
+   the machine, platform, Python and package versions, the embedding
+   model revision and the input hashes.
+6. Failed attempts disclosed. The two failed run attempts are recorded
+   in DECISIONS.md (D4, D5) rather than buried.
+7. Spend and credentials. The study itself made no network calls
+   during the scored runs and no paid calls. The one paid call was the
+   Jev claim_check below, run once through the TypeSafe connector
+   helper; no credential is stored in this repository.
+
+## Deviations and incidents on record
+
+- D4: the first run attempt failed at embedding load (an interrupted
+  model download left an incomplete snapshot) before any arm was
+  built. No records were written.
+- D5: the second attempt executed the full pass but its records were
+  lost to a missing output directory, a harness bug. The fix (one
+  line in scripts/run_study.py creating results/) landed in the
+  results commit, and the study was rerun from scratch per the stop
+  rule. Process cost only; no data from either attempt exists or was
+  used.
+- Display precision. The results commit also changed
+  scripts/make_results.py to print build times with four decimals
+  instead of three, after the raw records existed. It changes how
+  two RESULTS.md rows are rounded, not any metric or verdict, and is
+  recorded here so the change is declared.
+
+## Threats to validity
+
+- Tiny synthetic corpus. The corpus is 20 synthetic documents,
+  1,588 words, inherited from the fixed inputs. The verdicts describe
+  this corpus only; nothing here licenses a claim about retrieval at
+  production corpus scale.
+- One embedding model, CPU only, one machine, one scored pass. Build
+  and latency figures are medians of three, but there is no
+  cross-model or cross-machine variance estimate, and no headline
+  number carries an interval (none was pre-registered).
+- One node per document. Under the frozen defaults the LlamaIndex
+  arm holds exactly one node per document, so the study measures
   framework-default document-level dense retrieval. It does not
   measure LlamaIndex chunking behaviour, which is part of the
   framework's claim at real scale.
-- Minus 600: H2 turns on the frozen own-floor rule (own 10th
-  percentile). The rule was pre-registered and is applied
-  symmetrically, and every raw top-1 score is published so any
-  other floor can be applied, but the verdict is
-  definition-sensitive and a different defensible floor moves the
-  rates.
-- Minus 400: production build times (2.6 to 3.1 ms) sit near
-  timer resolution, so the H3 ratio point estimate (537.8x)
-  carries wide relative error. The REFUTED direction is not in
-  doubt (the band edge is 2.0x), but the exact ratio should not
-  be quoted as precise.
-- Minus 300: two failed run attempts preceded the scored pass
-  (D4: interrupted model download left an incomplete snapshot and
-  the offline load failed before any arm was built; D5: the full
-  pass executed but its records were lost to a missing output
-  directory, a harness bug, and the study was rerun from scratch
-  per the stop rule). Process cost only; no data from either
-  attempt exists or was used.
-- Minus 200: the Jev claim_check gate landed on REVIEW rather
-  than clear (below), so the headline figures stand on the hand
-  verification recorded here rather than on the gate.
+- H2 is definition-sensitive. H2 turns on the frozen own-floor rule
+  (each arm's own 10th percentile). The rule was pre-registered and
+  is applied symmetrically, and every raw top-1 score is published so
+  any other floor can be applied, but a different defensible floor
+  moves the rates.
+- Timer resolution. Production build times (2.6 to 3.1 ms) sit near
+  timer resolution, so the H3 ratio point estimate (537.8x) carries
+  wide relative error. The REFUTED direction is not in doubt (the
+  band edge is 2.0x), but the exact ratio should not be quoted as
+  precise.
+- No ablation. Neither arm was run with one part removed (for
+  example LlamaIndex on 40-word chunks, or production without the
+  rerank), so the study cannot say which part of each pipeline
+  produces its result. Out of the frozen scope.
+- Process cost. Two failed run attempts preceded the scored pass
+  (above). No data from either was used.
+- Claim gate on REVIEW. The Jev claim_check gate landed on REVIEW
+  rather than clear (below), so the headline figures stand on the
+  hand verification recorded here rather than on the gate.
+- Lock timing rests on git. Commit times are written by the author's
+  machine. The order of the commits is proven by git history; the
+  GitHub repository was created at 20:45:55 UTC, seven seconds after
+  the pre-registration commit time, which is consistent with it, but
+  no external clock timestamps the harness before the run.
 
-Deductions total 5,000. Grade 5,000 of 10,000.
 
 ## Jev claim_check record
 
