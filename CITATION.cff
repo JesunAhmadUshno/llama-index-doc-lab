@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "llama-index-doc-lab: LlamaIndex indexing and retrieval against the rag-foundation production pipeline, a pre-registered study"
+authors:
+  - family-names: Ushno
+    given-names: Jesun Ahmad
+repository-code: "https://github.com/JesunAhmadUshno/llama-index-doc-lab"
+license: Apache-2.0
+date-released: 2026-11-08
