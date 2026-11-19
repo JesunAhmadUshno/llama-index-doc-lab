@@ -1,0 +1,114 @@
+{
+ "source": "src/prodref/corpus.py, DOCUMENTS (vendored byte-identical from JesunAhmadUshno/rag-foundation commit 007e33238e6ce49100650b30f6820149410f022b)",
+ "method": "word = whitespace-delimited token, len(text.split())",
+ "documents": 20,
+ "min_words": 54,
+ "max_words": 73,
+ "total_words": 1208,
+ "per_document": [
+  {
+   "id": "water-cycle",
+   "topic": "water",
+   "words": 54
+  },
+  {
+   "id": "rivers-and-lakes",
+   "topic": "water",
+   "words": 59
+  },
+  {
+   "id": "ocean-tides",
+   "topic": "water",
+   "words": 61
+  },
+  {
+   "id": "photosynthesis",
+   "topic": "plants",
+   "words": 55
+  },
+  {
+   "id": "pollination",
+   "topic": "plants",
+   "words": 56
+  },
+  {
+   "id": "seed-dispersal",
+   "topic": "plants",
+   "words": 58
+  },
+  {
+   "id": "gravity",
+   "topic": "earth",
+   "words": 61
+  },
+  {
+   "id": "volcanoes",
+   "topic": "earth",
+   "words": 63
+  },
+  {
+   "id": "earthquakes",
+   "topic": "earth",
+   "words": 73
+  },
+  {
+   "id": "bees",
+   "topic": "animals",
+   "words": 58
+  },
+  {
+   "id": "bird-migration",
+   "topic": "animals",
+   "words": 59
+  },
+  {
+   "id": "salmon-run",
+   "topic": "animals",
+   "words": 63
+  },
+  {
+   "id": "solar-power",
+   "topic": "energy",
+   "words": 58
+  },
+  {
+   "id": "wind-power",
+   "topic": "energy",
+   "words": 56
+  },
+  {
+   "id": "hydro-power",
+   "topic": "energy",
+   "words": 59
+  },
+  {
+   "id": "northlight-loans",
+   "topic": "library",
+   "words": 64
+  },
+  {
+   "id": "northlight-hours",
+   "topic": "library",
+   "words": 66
+  },
+  {
+   "id": "northlight-events",
+   "topic": "library",
+   "words": 61
+  },
+  {
+   "id": "storms",
+   "topic": "weather",
+   "words": 63
+  },
+  {
+   "id": "seasons",
+   "topic": "weather",
+   "words": 61
+  }
+ ],
+ "preregistration_claim": {
+  "per_document": "72 to 87",
+  "total": 1588
+ }
+}

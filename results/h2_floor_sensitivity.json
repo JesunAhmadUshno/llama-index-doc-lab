@@ -1,0 +1,98 @@
+{
+ "analysis": "H2 floor sensitivity (post-registration, DECISIONS.md D6, 2026-11-17)",
+ "source": "results/raw_runs.json (committed scored pass)",
+ "method": "src/metrics.py percentile (linear interpolation) and spurious_rate, as in scripts/make_results.py",
+ "integrity_check": "own 10th percentile reproduces the published floors and spurious counts in results/metrics.json exactly",
+ "h2_margin": 0.25,
+ "shared_floor": 0.5,
+ "rows": [
+  {
+   "floor": "own 5th percentile",
+   "kind": "own_percentile",
+   "percentile": 5,
+   "arms": {
+    "prod": {
+     "floor": 0.17833333333333334,
+     "spurious_count": 9,
+     "spurious_rate": 0.75,
+     "n": 12
+    },
+    "li": {
+     "floor": 0.4584459364577028,
+     "spurious_count": 8,
+     "spurious_rate": 0.6666666666666666,
+     "n": 12
+    }
+   },
+   "difference": 0.08333333333333337,
+   "higher_arm": "prod",
+   "difference_at_or_above_h2_margin": false
+  },
+  {
+   "floor": "own 10th percentile (frozen rule)",
+   "kind": "own_percentile",
+   "percentile": 10,
+   "arms": {
+    "prod": {
+     "floor": 0.23500000000000001,
+     "spurious_count": 9,
+     "spurious_rate": 0.75,
+     "n": 12
+    },
+    "li": {
+     "floor": 0.5480588107387511,
+     "spurious_count": 5,
+     "spurious_rate": 0.4166666666666667,
+     "n": 12
+    }
+   },
+   "difference": 0.3333333333333333,
+   "higher_arm": "prod",
+   "difference_at_or_above_h2_margin": true
+  },
+  {
+   "floor": "own 25th percentile",
+   "kind": "own_percentile",
+   "percentile": 25,
+   "arms": {
+    "prod": {
+     "floor": 0.7023809523809523,
+     "spurious_count": 3,
+     "spurious_rate": 0.25,
+     "n": 12
+    },
+    "li": {
+     "floor": 0.6456889952793265,
+     "spurious_count": 2,
+     "spurious_rate": 0.16666666666666666,
+     "n": 12
+    }
+   },
+   "difference": 0.08333333333333334,
+   "higher_arm": "prod",
+   "difference_at_or_above_h2_margin": false
+  },
+  {
+   "floor": "shared absolute floor 0.50",
+   "kind": "shared_absolute",
+   "percentile": null,
+   "arms": {
+    "prod": {
+     "floor": 0.5,
+     "spurious_count": 6,
+     "spurious_rate": 0.5,
+     "n": 12
+    },
+    "li": {
+     "floor": 0.5,
+     "spurious_count": 8,
+     "spurious_rate": 0.6666666666666666,
+     "n": 12
+    }
+   },
+   "difference": 0.16666666666666663,
+   "higher_arm": "li",
+   "difference_at_or_above_h2_margin": false
+  }
+ ]
+}
