@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  # requirements.txt holds the study's frozen runtime pins
+  # (PREREGISTRATION.md); bumping them would change the system under
+  # study, so pip updates are left out until a new locked cycle.
